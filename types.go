@@ -1,4 +1,12 @@
-package models
+package main
+
+type Response struct {
+	Message string `json:"message"`
+}
+
+func response(message string) Response {
+	return Response{Message: message}
+}
 
 type ConditionPayload struct {
 	ConditionId int     `json:"condition_id"`

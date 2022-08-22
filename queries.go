@@ -1,4 +1,4 @@
-package models
+package main
 
 const CREATE_USER_QUERY = `INSERT INTO users (name, profession, gender, age, final_growth) VALUES ($1, $2, $3, $4, $5) RETURNING id`
 const CREATE_INITIAL_INFORMATION = `INSERT INTO initial_informations (city_value, tax_rate, bonds_amount, bonds_interest_rate, fs_id) VALUES ($1, $2, $3, $4, $5)`

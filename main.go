@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"itpsl/models"
 	"log"
 	"net/http"
 	"os"
@@ -14,7 +13,7 @@ import (
 
 type Application struct {
 	logger *log.Logger
-	models models.Connection
+	models Connection
 }
 
 func main() {
@@ -30,7 +29,7 @@ func main() {
 	defer db.Close()
 	app := &Application {
 		logger: log.New(os.Stdout, "", log.Ldate|log.Ltime),
-		models: models.GetModels(db),
+		models: GetModels(db),
 	}
 	server := &http.Server {
 		Addr: ":"+os.Getenv("SERVER_PORT"),
