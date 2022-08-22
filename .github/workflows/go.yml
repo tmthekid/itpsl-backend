@@ -30,3 +30,13 @@ jobs:
           DB_USERNAME=${{ secrets.DB_USERNAME }}
           DB_PASSWORD=${{ secrets.DB_PASSWORD }}
           EOF
+    - name: Create package.json file
+      run: |
+          cat << EOF > package.json
+          {
+            "apps" : [{
+              "name"        : "itpsl",
+              "script"      : "./itpsl"
+            }]
+          }
+          EOF
