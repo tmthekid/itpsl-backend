@@ -17,9 +17,9 @@ func (c *Connection) GetScores() ([]Score, error) {
 	var scores []Score
 	for rows.Next() {
 		var score Score
-		scanErr := rows.Scan(&score.Id, &score.Category, &score.Range, &score.Growth, &score.Rating)
+		scanErr := rows.Scan(&score.Id, &score.Category, &score.Score, &score.Growth, &score.Stars)
 		if scanErr != nil {
-			fmt.Println("line 20, score.go", scanErr)
+			fmt.Println("line 22, score.go", scanErr)
 			return nil, scanErr
 		}
 		scores = append(scores, score)

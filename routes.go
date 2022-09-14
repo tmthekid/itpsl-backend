@@ -12,6 +12,8 @@ func (app *Application) routes() http.Handler {
 	router.HandlerFunc(http.MethodGet, "/api/v1/conditions", app.getConditions)
 	router.HandlerFunc(http.MethodGet, "/api/v1/expenditures", app.getExpenditures)
 	router.HandlerFunc(http.MethodGet, "/api/v1/scores", app.getScores)
+	router.HandlerFunc(http.MethodGet, "/api/v1/bond-interests", app.getBondsInterests)
+	router.HandlerFunc(http.MethodGet, "/api/v1/expenditure-values", app.getExpenditureValues)
 	router.HandlerFunc(http.MethodPost, "/api/v1/results", app.saveResultHandler)
 	router.HandlerFunc(http.MethodGet, "/api/v1/download", app.DownloadData)
 	return app.enableCORS(router)

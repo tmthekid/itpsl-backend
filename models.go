@@ -54,7 +54,21 @@ type Expenditure struct {
 type Score struct {
 	Id         int    `json:"id"`
 	Category string `json:"category"`
-	Range string `json:"range"`
+	Score string `json:"score"`
 	Growth float64 `json:"growth"`
-	Rating int `json:"rating"`
+	Stars int `json:"stars"`
+}
+
+type BondInterest struct {
+	Id         int    `json:"id"`
+	Min int `json:"min"`
+	Max int `json:"max"`
+	Interest int `json:"interest"`
+}
+
+type ExpenditureValue struct {
+	Id         int    `json:"id"`
+	Expenditure string `json:"expenditure"`
+	ConditionName string `json:"condition_name"`
+	Value float32 `json:"value"`
 }
